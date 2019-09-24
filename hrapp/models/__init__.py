@@ -3,4 +3,4 @@ from .computer import Computer
 from .employee_computer import EmployeeComputer
 from .department import Department
 from .training_program import TrainingProgram
-from .employee_trainingProgram import EmployeeTrainingProgram
+from .employee_training_program import EmployeeTrainingProgram
