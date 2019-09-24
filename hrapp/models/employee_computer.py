@@ -1,4 +1,6 @@
+from django.utils import timezone
 from django.db import models
+
 
 class EmployeeComputer(models.Model):
     """
@@ -9,5 +11,5 @@ class EmployeeComputer(models.Model):
 
     employee = models.ForeignKey("Employee", on_delete=models.CASCADE)
     computer = models.ForeignKey("Computer", on_delete=models.CASCADE)
-    assigned_date = models.DateField()
+    assigned_date = models.DateField(default = timezone.now)
     unassigned_date = models.DateField(null=True, blank=True, default=None)
