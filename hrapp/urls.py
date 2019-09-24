@@ -4,6 +4,7 @@ from hrapp import views
 from .views import *
 
 app_name = 'hrapp'
+
 urlpatterns = [
     path('', home, name='home'),
     path('accounts/', include('django.contrib.auth.urls')),
