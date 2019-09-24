@@ -36,5 +36,3 @@
 * Fire up your dev server and get to work!
 
   * `python manage.py runserver`
-
-
