@@ -1,14 +1,6 @@
 ## Steps to get your project started:
 
-* Create a new repo in your chohort's github org:
-
-  * `bangazon_workforce_mgt_<your-team-name>`
-
-* Clone this repo and cd into it
-* Change your local repo's remote repo:
-
-  * `git remote remove origin`
-  * `git remote add origin <url of your team's repo>`
+* Clone down your team's repo and cd into it
 
 * Create your virtual environment:
 
@@ -36,5 +28,3 @@
 * Fire up your dev server and get to work!
 
   * `python manage.py runserver`
-
-
