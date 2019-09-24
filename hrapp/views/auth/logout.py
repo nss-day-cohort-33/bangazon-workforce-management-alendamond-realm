@@ -4,4 +4,4 @@ from django.contrib.auth import logout
 
 def logout_user(request):
     logout(request)
-    return redirect(reverse('hrapp:home'))
+    return redirect(('hrapp:home'))
