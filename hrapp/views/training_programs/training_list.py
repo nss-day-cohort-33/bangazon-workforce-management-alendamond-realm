@@ -8,6 +8,7 @@ from hrapp.models import TrainingProgram
 from hrapp.models import model_factory
 from ..connection import Connection
 
+
 @login_required
 def training_list(request):
     if request.method == 'GET':
@@ -50,8 +51,8 @@ def training_list(request):
             )
             VALUES (?, ?, ?, ?, ?)
             """,
-            (form_data['name'], form_data['description'],
-                form_data['start_date'], form_data['end_date'],
-                form_data["max_num"]))
+                              (form_data['name'], form_data['description'],
+                               form_data['start_date'], form_data['end_date'],
+                                  form_data["max_num"]))
 
         return redirect(reverse('hrapp:training_list'))
