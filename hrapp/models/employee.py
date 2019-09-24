@@ -1,5 +1,6 @@
 from django.db import models
-# from .department import Department
+from django.urls import reverse
+from .department import Department
 
 class Employee(models.Model):
 
@@ -7,7 +8,7 @@ class Employee(models.Model):
     last_name = models.CharField(max_length=100)
     start_date = models.DateField()
     is_supervisor = models.BooleanField()
-    # department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = ("Employee")
@@ -17,4 +18,4 @@ class Employee(models.Model):
         return f"{self.first_name} {self.last_name}"
 
     def get_absolute_url(self):
-        return reverse("Employee_detail", kwargs={"pk": self.pk})
+        return reverse("employee_details", kwargs={"pk": self.pk})
