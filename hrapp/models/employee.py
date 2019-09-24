@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 # from .department import Department
 
 class Employee(models.Model):
@@ -17,4 +18,4 @@ class Employee(models.Model):
         return f"{self.first_name} {self.last_name}"
 
     def get_absolute_url(self):
-        return reverse("Employee_detail", kwargs={"pk": self.pk})
+        return reverse("employee_details", kwargs={"pk": self.pk})

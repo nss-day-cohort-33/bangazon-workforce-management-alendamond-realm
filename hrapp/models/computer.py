@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Computer(models.Model):
     '''
@@ -21,4 +22,4 @@ class Computer(models.Model):
         verbose_name_plural = ("Computers")
 
     def get_absolute_url(self):
-        return reverse("Computer_detail", kwargs={"pk": self.pk})
+        return reverse("computer_details", kwargs={"pk": self.pk})
