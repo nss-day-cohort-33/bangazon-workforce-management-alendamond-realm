@@ -4,7 +4,6 @@ from django.urls import reverse
 from .department import Department
 
 class Employee(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     start_date = models.DateField()

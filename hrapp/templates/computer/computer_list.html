@@ -14,7 +14,7 @@
         Purchase date: {{computer.purchase_date}}
         <br>
         Decommission date: {{computer.decommission_date}}
-
+        <a href="{% url 'hrapp:computer' computer.id %}"> Detials </a>
     </li>
 {% endfor %}
 </ul>
