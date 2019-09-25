@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bangazon</title>
+  </head>
+  <body>
+    {% extends 'shared/base.html' %}
+    {% load staticfiles %}
+
+    {% comment %} {% block css %}
+      <link rel="stylesheet" href="{% static 'styles/books.css' %}" />
+    {% endblock %} {% endcomment %}
+
+    {% block content %}
+      <h1>Training Programs</h1>
+
+      <dialog class="infoDialog">
+          <div class="infoDialog__message"></div>
+          <button class="closeDialog">Close</button>
+      </dialog>
+
+      <a href="{% url 'hrapp:training_form' %}">Add a New Training Program</a>
+
+      <ol class="trainings">
+      {% for training in all_trainings %}
+          <li class="training">
+            {% comment %} <a class="training__name" href="{% url 'hrapp:training_list' training.id %}"> {% endcomment %}
+              {{ training.name }}
+            {% comment %} </a> {% endcomment %}
+            {% comment %} <div class="training__description">
+              {{training.author}} published in {{training.year_published}}
+            </div> {% endcomment %}
+            <button id="detail--{{ training.id }}">Details</button>
+          </li>
+      {% endfor %}
+      </ol>
+    {% endblock %}
+
+    {% comment %} {% block scripts %}
+      <script src="{% static 'scripts/trainings.js' %}"></script>
+    {% endblock %} {% endcomment %}
+  </body>
+</html>

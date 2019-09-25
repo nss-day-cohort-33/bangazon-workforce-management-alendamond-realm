@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bangazon-Workforce</title>
+  </head>
+  <body>
+    {% extends 'shared/base.html' %}
+    {% block content %}
+        <h1>Add a Training Program</h1>
+
+        <form action="{% url 'hrapp:training_list' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <label for="name">Name: </label>
+            <input id="name" type="text" name="name">
+        </fieldset>
+        <fieldset>
+            <label for="description">Description: </label>
+            <input id="description" type="text" name="description">
+        </fieldset>
+        <fieldset>
+            <label for="start_date">Start Date: </label>
+            <input id="start_date" type="date" name="start_date">
+        </fieldset>
+        <fieldset>
+            <label for="end_date">End Date: </label>
+            <input id="end_date" type="date" name="end_date">
+        </fieldset>
+        <fieldset>
+            <label for="max_num">Maxixum Number of Attendees: </label>
+            <input id="max_num" type="number" name="max_num">
+        </fieldset>
+        <input type="submit" value="Add It" />
+        </form>
+    {% endblock %}
+  </body>
+</html>

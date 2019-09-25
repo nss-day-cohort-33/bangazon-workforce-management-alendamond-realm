@@ -1,0 +1,46 @@
+[
+  {
+    "model": "hrapp.employee",
+    "pk": 1,
+    "fields": {
+      "first_name": "Mary",
+      "last_name":"West",
+      "start_date": "2012-03-09",
+      "is_supervisor": true,
+      "department": 1
+    }
+  },
+  {
+    "model": "hrapp.employee",
+    "pk": 2,
+    "fields": {
+      "first_name": "Amber",
+      "last_name":"Gooch",
+      "start_date": "1987-03-09",
+      "is_supervisor": false,
+      "department": 2
+    }
+  },
+  {
+    "model": "hrapp.employee",
+    "pk": 3,
+    "fields": {
+      "first_name": "Curt",
+      "last_name":"Cato",
+      "start_date": "2012-10-20",
+      "is_supervisor": true,
+      "department": 3
+    }
+  },
+  {
+    "model": "hrapp.employee",
+    "pk": 4,
+    "fields": {
+      "first_name": "Joy",
+      "last_name":"Ittycheriah",
+      "start_date": "2014-10-20",
+      "is_supervisor": false,
+      "department": 1
+    }
+  }
+]
