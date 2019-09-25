@@ -1,0 +1,38 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Computer Form</title>
+  </head>
+  <body>
+    <h1>Add New Computer</h1>
+
+<form action="{% url 'hrapp:computer_list' %}" method="post">
+      {% csrf_token %}
+      <fieldset>
+          <label for="make">Make: </label>
+          <input id="make" type="text" name="make">
+      </fieldset>
+      <fieldset>
+          <label for="purchase_date">Purchase Date: </label>
+          <input id="purchase_date" type="date" name="purchase_date">
+      </fieldset>
+
+      <fieldset>
+          <label for="decommission_date">Decommission date: </label>
+          <input id="decommission_date" type="date" name="decommission_date">
+      </fieldset>
+      <fieldset>
+          {% comment %} <label for="location">Library: </label>
+          <select id="location" type="text" name="location">
+                {% for library in all_libraries %}
+                    <option value="{{ library.id }}">{{ library.title }}</option>
+                {% endfor %}
+          </select> {% endcomment %}
+      </fieldset>
+<input type="submit" value="Add It" />
+    </form>
+  </body>
+</html>

@@ -1,3 +1,5 @@
 from .employees.employee_list import employee_list
 from .home import home
 from .auth.logout import logout_user
+from .computers import computer_list
+from .computers import computer_form
