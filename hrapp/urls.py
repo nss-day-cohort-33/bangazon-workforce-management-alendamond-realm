@@ -14,15 +14,14 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('logout/', logout_user, name='logout'),
     path('employees/', employee_list, name='employee_list'),
-<<<<<<< HEAD
-    # path('^employee/form$', employee_form, name='employee_form')
-=======
+    path('training_programs/', training_list, name='training_list'),
+    path('training_programs/form', training_form, name='training_form'),
     path('departments/', department_list, name='department_list'),
     path('departments/<int:department_id>/', department_details, name='department_details'),
     path('^department/form$', department_form, name='department_form'),
->>>>>>> master
     path('computer/', computer_list, name='computer_list'),
     path('computer/form', computer_form, name='computer_form')
+    # path('^employee/form$', employee_form, name='employee_form')
 ]
 
 
