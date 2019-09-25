@@ -6,7 +6,6 @@ from hrapp.models import Department
 from hrapp.models import model_factory
 from ..connection import Connection
 
-
 def get_department(department_id):
     with sqlite3.connect(Connection.db_path) as conn:
         conn.row_factory = model_factory(Department)
@@ -27,7 +26,7 @@ def get_department(department_id):
 @login_required
 def department_details(request, department_id):
     if request.method == 'GET':
-        department = get_department(department_id)
+        department_details = get_department(department_id)
 
         template = 'departments/department_details.html'
         context = {
