@@ -36,7 +36,7 @@
       "model": "hrapp.trainingprograms",
       "pk": 4,
       "fields": {
-        "title": "Team Synergy",
+        "title": "Building Team Synergy",
         "description":"Learn how to create synergy among your underlings with team building exercises",
         "start_date": "2019-11-09",
         "end_date": "2019-11-05",
