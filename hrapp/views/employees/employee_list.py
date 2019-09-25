@@ -30,7 +30,7 @@ def employee_list(request):
             all_employees = db_cursor.fetchall()
 
 
-    template = 'employees/employees_list.html'
+    template = 'employees/employee_list.html'
     context = {
         'employees': all_employees
     }
@@ -39,4 +39,22 @@ def employee_list(request):
 
     return redirect(reverse('hrapp:employees'))
 
+    elif request.method == 'POST':
+        form_data = request.POST
 
+        with sqlite3.connect(Connection.db_path) as conn:
+            db_cursor = conn.cursor()
+
+            db_cursor.execute("""
+                INSERT INTO hrapp_employee
+                (
+                    first_name, last_name, is_supervisor,
+                    department_id, user_id
+                )
+                VALUES (?, ?, ?, ?, ?)
+                """,
+                (form_data['titlfirst_namee'], form_data['last_name'],
+                    form_data['is_supervisor'], form_data['department_id'],
+                    form_data["user_id"]))
+
+            return redirect(reverse('hrapp:employees'))
