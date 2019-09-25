@@ -41,9 +41,11 @@ def get_department(department_id):
         SELECT
             d.id,
             d.dept_name,
-            d.budget
-            e.first_name
-            e.last_name
+            d.budget,
+            e.id employee_id,
+            e.first_name,
+            e.last_name,
+            e.department_id
         FROM hrapp_department d
         join hrapp_employee e on d.id = e.department_id
         WHERE d.id = ?
