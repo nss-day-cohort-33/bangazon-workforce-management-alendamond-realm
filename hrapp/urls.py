@@ -1,8 +1,11 @@
 from django.urls import path
-from django.conf.urls import include
+from django.contrib import admin
+from django.conf.urls import include, url
+from hrapp.models import *
 from hrapp import views
 from .views import *
 from django.conf.urls import url
+
 
 app_name = 'hrapp'
 
@@ -18,6 +21,7 @@ urlpatterns = [
     path('^department/form$', department_form, name='department_form'),
     path('computer/', computer_list, name='computer_list'),
     path('computer/form', computer_form, name='computer_form')
+    # path('^employee/form$', employee_form, name='employee_form')
 ]
 
 
