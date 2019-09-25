@@ -1,0 +1,22 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+<h1>Computer</h1>
+<form action='actionUrl' method='GET'>
+<button type='submit'> add computer</button>
+</form>
+
+<ul>
+{% for computer in all_computers %}
+    <li>
+        Computer Model: {{computer.make}}
+        <br>
+        Purchase date: {{computer.purchase_date}}
+        <br>
+        Decommission date: {{computer.decommission_date}}
+        <a href="{% url 'hrapp:computer' computer.id %}"> Detials </a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock content %}
+
