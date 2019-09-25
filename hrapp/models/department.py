@@ -10,5 +10,6 @@ class Department(models.Model):
         verbose_name = ("Department")
         verbose_name_plural = ("Departments")
 
+
     def get_absolute_url(self):
         return reverse("department_details", kwargs={"pk": self.pk})
