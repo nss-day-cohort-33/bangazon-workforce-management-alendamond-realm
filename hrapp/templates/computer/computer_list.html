@@ -2,13 +2,21 @@
 
 {% block content %}
 <h1>Computer</h1>
+<form action='actionUrl' method='GET'>
+<button type='submit'> add computer</button>
+</form>
 
-<ol>
+<ul>
 {% for computer in all_computers %}
     <li>
-        Current computer: {{computer.make}}
+        Computer Model: {{computer.make}}
+        <br>
+        Purchase date: {{computer.purchase_date}}
+        <br>
+        Decommission date: {{computer.decommission_date}}
+
     </li>
 {% endfor %}
-</ol>
+</ul>
 {% endblock content %}
 
