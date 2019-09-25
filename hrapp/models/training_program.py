@@ -5,8 +5,8 @@ class TrainingProgram(models.Model):
 
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
-    start_day = models.DateField()
-    end_day = models.DateField()
+    start_date = models.DateField()
+    end_date = models.DateField()
     max_num = models.IntegerField()
 
     class Meta:
