@@ -10,8 +10,8 @@ class TrainingProgram(models.Model):
     capacity = models.IntegerField()
 
     class Meta:
-        verbose_title = ("Training Program")
-        verbose_title_plural = ("Training Program")
+        verbose_name = ("Training Program")
+        verbose_name_plural = ("Training Program")
     def __str__(self):
         return f"{self.title} {self.description}"
 

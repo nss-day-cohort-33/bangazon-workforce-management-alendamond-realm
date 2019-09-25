@@ -3,32 +3,32 @@
         "model": "hrapp.employeetrainingprogram",
         "pk": 1,
         "fields": {
-          "employeeId": 1,
-          "computerId": 1
+          "employee": 1,
+          "training_program": 1
         }
       },
       {
         "model": "hrapp.employeetrainingprogram",
         "pk": 2,
         "fields": {
-            "employeeId": 2,
-            "computerId": 2
+            "employee": 2,
+            "training_program": 2
         }
       },
       {
         "model": "hrapp.employeetrainingprogram",
         "pk": 3,
         "fields": {
-            "employeeId": 3,
-            "computerId": 3
+            "employee": 3,
+            "training_program": 3
         }
       },
       {
         "model": "hrapp.employeetrainingprogram",
         "pk": 3,
         "fields": {
-            "employeeId": 4,
-            "computerId": 4
+            "employee": 4,
+            "training_program": 4
         }
       }
     ]
