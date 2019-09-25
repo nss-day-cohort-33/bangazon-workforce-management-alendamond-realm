@@ -1,0 +1,24 @@
+{% extends 'shared/base.html' %}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Department</title>
+</head>
+
+{% block content %}
+<body>
+
+    <section id="department_details">
+        <h1>{{ department_details.dept_name }}</h1>
+
+        <div>Budget: {{ department_details.budget }}</div>
+    </section>
+
+</body>
+{% endblock %}
+
+</html>
