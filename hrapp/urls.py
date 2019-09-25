@@ -11,12 +11,9 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('logout/', logout_user, name='logout'),
     path('employees/', employee_list, name='employee_list'),
-<<<<<<< HEAD
     path('training_programs/', training_list, name='training_list'),
-=======
     path('computer/', computer_list, name='computer_list'),
     path('computer/form', computer_form, name='computer_form')
->>>>>>> master
 ]
 
 
