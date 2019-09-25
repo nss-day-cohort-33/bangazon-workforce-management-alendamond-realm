@@ -1,0 +1,33 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <h1>Departments</h1>
+
+    <dialog class="infoDialog">
+        <div class="infoDialog__message"></div>
+        <button class="closeDialog">Close</button>
+    </dialog>
+
+    <a href="{% url 'hrapp:department_form' %}">Add Department</a>
+
+    <ol class="departments">
+    {% for department in all_departments %}
+        <li class="department">
+            <a class="department__title" href="{% url 'hrapp:department_details' department.id %}">Details </a>for {{ department.dept_name }}
+            <ol class="department_emps">
+                <li>There are currently x employees in this department</li>
+            </ol>
+
+        </li>
+    {% endfor %}
+    </ol>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'scripts/departments.js' %}"></script>
+{% endblock %}
