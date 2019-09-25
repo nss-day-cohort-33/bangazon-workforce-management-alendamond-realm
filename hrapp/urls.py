@@ -5,6 +5,7 @@ from .views import *
 from django.conf.urls import url
 
 app_name = 'hrapp'
+
 urlpatterns = [
     path('', home, name='home'),
     path('accounts/', include('django.contrib.auth.urls')),
