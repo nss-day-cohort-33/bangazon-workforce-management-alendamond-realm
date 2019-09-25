@@ -15,15 +15,15 @@ def create_department(cursor, row):
     department.dept_name = _row["dept_name"]
     department.budget = _row["budget"]
 
-    # Note: You are adding a blank books list to the department object
+    # Note: You are adding a blank employees list to the department object
     # This list will be populated later (see below)
-    department.employees = []
 
     employee = Employee()
     employee.id = _row["employee_id"]
     employee.first_name = _row["first_name"]
     employee.Last_name = _row["last_name"]
 
+    department.employees = employee
     # Return a tuple containing the department and the
     # employee built from the data in the current row of
     # the data set

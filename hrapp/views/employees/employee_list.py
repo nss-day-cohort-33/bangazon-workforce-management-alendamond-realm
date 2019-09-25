@@ -24,7 +24,6 @@ def employee_list(request):
                 e.start_date,
                 e.is_supervisor
             from hrapp_employee e
-            join auth_user u on e.user_id = u.id
             """)
 
             all_employees = db_cursor.fetchall()

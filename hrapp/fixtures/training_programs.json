@@ -1,6 +1,6 @@
 [
     {
-      "model": "hrapp.trainingprograms",
+      "model": "hrapp.trainingprogram",
       "pk": 1,
       "fields": {
         "title": "How to be a Good Corporate Drone",
@@ -11,7 +11,7 @@
       }
     },
     {
-      "model": "hrapp.trainingprograms",
+      "model": "hrapp.trainingprogram",
       "pk": 2,
       "fields": {
         "title": "Surviving Whiteboarding",
@@ -22,7 +22,7 @@
       }
     },
     {
-      "model": "hrapp.trainingprograms",
+      "model": "hrapp.trainingprogram",
       "pk": 3,
       "fields": {
         "title": "Salary Negotiation",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "model": "hrapp.trainingprograms",
+      "model": "hrapp.trainingprogram",
       "pk": 4,
       "fields": {
         "title": "Building Team Synergy",
