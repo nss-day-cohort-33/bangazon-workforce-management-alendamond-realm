@@ -1,6 +1,6 @@
 [
     {
-        "model": "hrapp.employee_training_program",
+        "model": "hrapp.employeetrainingprogram",
         "pk": 1,
         "fields": {
           "employeeId": 1,
@@ -8,7 +8,7 @@
         }
       },
       {
-        "model": "hrapp.employee_training_program",
+        "model": "hrapp.employeetrainingprogram",
         "pk": 2,
         "fields": {
             "employeeId": 2,
@@ -16,7 +16,7 @@
         }
       },
       {
-        "model": "hrapp.employee_training_program",
+        "model": "hrapp.employeetrainingprogram",
         "pk": 3,
         "fields": {
             "employeeId": 3,
@@ -24,7 +24,7 @@
         }
       },
       {
-        "model": "hrapp.employee_training_program",
+        "model": "hrapp.employeetrainingprogram",
         "pk": 3,
         "fields": {
             "employeeId": 4,
