@@ -3,10 +3,44 @@
       "model": "hrapp.trainingprograms",
       "pk": 1,
       "fields": {
-        "manufacturer": "Lenovo",
-        "model":"NoGo 2000",
-        "purchase_date": "2012-03-09",
-        "decommission_date": "2014-04-05"
+        "title": "How to be a Good Corporate Drone",
+        "description":"The Man puts you in your place in this 3 hour talk",
+        "start_date": "2012-03-09",
+        "end_date": "2014-04-05",
+        "capacity": 5
+      }
+    },
+    {
+      "model": "hrapp.trainingprograms",
+      "pk": 2,
+      "fields": {
+        "title": "Surviving Whiteboarding",
+        "description":"Will Gant presents whiteboarding exercises",
+        "start_date": "2019-09-30",
+        "end_date": "2019-10-05",
+        "capacity": 5
+      }
+    },
+    {
+      "model": "hrapp.trainingprograms",
+      "pk": 3,
+      "fields": {
+        "title": "Salary Negotiation",
+        "description":"John Talk on salary negotiation for beginners",
+        "start_date": "2020-02-09",
+        "end_date": "2020-04-05",
+        "capacity": 5
+      }
+    },
+    {
+      "model": "hrapp.trainingprograms",
+      "pk": 4,
+      "fields": {
+        "title": "Team Synergy",
+        "description":"Learn how to create synergy among your underlings with team building exercises",
+        "start_date": "2019-11-09",
+        "end_date": "2019-11-05",
+        "capacity": 5
       }
     }
 ]
