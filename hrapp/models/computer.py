@@ -13,6 +13,7 @@ class Computer(models.Model):
     '''
 
     make = models.CharField(max_length=20)
+    manufacturer = models.CharField(max_length=20)
     purchase_date = models.DateField()
     decommission_date = models.DateField(null=True, blank=True, default=None)
     employees = models.ManyToManyField("Employee", through='EmployeeComputer')
