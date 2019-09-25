@@ -1,4 +1,3 @@
-{% load staticfiles %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,27 +21,18 @@
         </fieldset>
         <fieldset>
             <label for="start_date">Start Date: </label>
-            <input id="start_date" type="number" name="start_date">
+            <input id="start_date" type="date" name="start_date">
         </fieldset>
         <fieldset>
             <label for="end_date">End Date: </label>
-            <input id="end_date" type="text" name="end_date">
+            <input id="end_date" type="date" name="end_date">
         </fieldset>
         <fieldset>
             <label for="max_num">Maxixum Number of Attendees: </label>
-            <input id="max_num" type="text" name="max_num">
+            <input id="max_num" type="number" name="max_num">
         </fieldset>
         <input type="submit" value="Add It" />
         </form>
     {% endblock %}
   </body>
 </html>
-{% comment %} TODO: Delete the Later If Not Needed {% endcomment %}
- {% comment %} <fieldset>
-            <label for="location">Library: </label>
-            <select id="location" type="text" name="location">
-                    {% for library in all_libraries %}
-                        <option value="{{ library.id }}">{{ library.title }}</option>
-                    {% endfor %}
-            </select>
-        </fieldset> {% endcomment %}
