@@ -2,12 +2,13 @@
 
 {% block content %}
 <h1>Employees</h1>
+ {% comment %} <a href="{% url 'hrapp:emplpoyee_form' %}">Add Employee</a> {% endcomment %}
 
 <ol>
 {% for employee in employees %}
     <li>
         <p>{{ employee }}</p>
-        Current computer: {{employee.computer}}
+        Department: {{employee.department_id}}
     </li>
 {% endfor %}
 </ol>
