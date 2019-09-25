@@ -4,9 +4,9 @@
       "pk": 1,
       "fields": {
         "employeeId": 1,
-        "computer":1,
-        "Assigned_date": "2012-03-09",
-        "Unassigned_date": "2014-04-05"
+        "computerId":1,
+        "assigned_date": "2012-03-09",
+        "unassigned_date": "2014-04-05"
       }
     },
     {
@@ -14,9 +14,9 @@
         "pk": 2,
         "fields": {
           "employeeId": 2,
-          "computer":2,
-          "Assigned_date": "2012-06-10",
-          "Unassigned_date": "2014-09-05"
+          "computerId":2,
+          "assigned_date": "2012-06-10",
+          "unassigned_date": "2014-09-05"
         }
       },
       {
@@ -24,9 +24,9 @@
         "pk": 3,
         "fields": {
           "employeeId": 3,
-          "computer":3,
-          "Assigned_date": "2010-03-09",
-          "Unassigned_date": "2019-04-05"
+          "computerId":3,
+          "assigned_date": "2010-03-09",
+          "unassigned_date": "2019-04-05"
         }
       },
       {
@@ -34,9 +34,9 @@
         "pk": 4,
         "fields": {
           "employeeId": 4,
-          "computer":4,
-          "Assigned_date": "2020-03-09",
-          "Unassigned_date": "2024-04-05"
+          "computerId":4,
+          "assigned_date": "2020-03-09",
+          "unassigned_date": "2024-04-05"
         }
       }
   ]
