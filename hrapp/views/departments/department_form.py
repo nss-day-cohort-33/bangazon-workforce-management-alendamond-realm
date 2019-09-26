@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from hrapp.models import Department
 from hrapp.models import model_factory
 from ..connection import Connection
-from .department_details import get_department
+from .department_details import get_department_and_employees
 
 def get_departments():
     with sqlite3.connect(Connection.db_path) as conn:

@@ -1,24 +1,34 @@
 {% extends 'shared/base.html' %}
 
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>Department</title>
-</head>
 
 {% block content %}
-<body>
+    <title>Department</title>
 
     <section id="department_details">
-        <h1>{{ department_details.dept_name }}</h1>
+        <h1>Department:  {{ department.dept_name }}</h1>
 
-        <div>Budget: {{ department_details.budget }}</div>
+        <div>Budget:  {{ department.budget }}</div>
     </section>
+    <ul>
 
-</body>
+    {% for employee in all_employees %}
+
+    {% if employee.department_id is department.id %}
+    {% if employee.is_supervisor is 1 %}
+
+      <li><b>{{employee.first_name}}</b> is a supervisor!</li>
+
+    {% else %}
+
+        <li><b>{{employee.first_name}}</b> is NOT a supervisor!</li>
+
+
+    {% endif %}
+    {% endif %}
+
+    {% endfor %}
+
+    </ul>
+
 {% endblock %}
-
-</html>
