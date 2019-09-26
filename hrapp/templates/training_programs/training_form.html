@@ -21,7 +21,7 @@
         </fieldset>
         <fieldset>
             <label for="description">Description: </label>
-            <input id="description" type="text" name="description" value="{{ training.description }}">
+            <input id="description" type="type" name="description" value="{{ training.description }}">
         </fieldset>
         <fieldset>
             <label for="start_date">Start Date: </label>
@@ -32,7 +32,7 @@
             <input id="end_date" type="date" name="end_date" value="{{ training.end_date }}">
         </fieldset>
         <fieldset>
-            <label for="capacity">Maxixum Number of Attendees: </label>
+            <label for="capacity">Maximum Number of Attendees: </label>
             <input id="capacity" type="number" name="capacity" value="{{ training.capacity }}">
         </fieldset>
         {% if training.id is not None %}
