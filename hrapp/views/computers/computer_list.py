@@ -23,6 +23,7 @@ def computer_list (request):
         FROM hrapp_computer c;
         """)
 
+
         all_computers = db_cursor.fetchall()
 
         template = 'computer/computer_list.html'
@@ -41,8 +42,8 @@ def computer_list (request):
             (
                 manufacturer, model, purchase_date, decommission_date
             )
-            VALUES (?, ?, ?)
+            VALUES (?, ?, ?, ?)
             """,
-            (form_data['make'], form_data['purchase_date'], form_data['decommission_date']))
+            (form_data['manufacturer'], form_data['model'], form_data['purchase_date'], form_data['decommission_date']))
 
         return redirect(reverse('hrapp:computer_list'))

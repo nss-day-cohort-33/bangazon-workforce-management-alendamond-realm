@@ -5,8 +5,9 @@
 <a href="{% url 'hrapp:computer_form' %}">Add Computer</a>
 <ul>
 {% for computer in all_computers %}
+
     <li>
-        Computer Model: {{computer.make}}
+        Computer Model: {{computer.manufacturer}} {{computer.model}}
         <br>
         Purchase date: {{computer.purchase_date}}
         <br>
