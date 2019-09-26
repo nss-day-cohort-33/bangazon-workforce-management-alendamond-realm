@@ -28,14 +28,16 @@
           <label for="decommission_date">Decommission date: </label>
           <input id="decommission_date" type="date" name="decommission_date">
       </fieldset>
-      <fieldset>
-          {% comment %} <label for="location">Library: </label>
-          <select id="location" type="text" name="location">
-                {% for library in all_libraries %}
-                    <option value="{{ library.id }}">{{ library.title }}</option>
+          <fieldset>
+          <label for="employee">Employee: </label>
+          <select id="employee" type="text" name="employee">
+                <option value=Null />
+                {% for employee in all_employees %}
+                    <option value="{{ employee.id }}">{{ employee.first_name }} {{ employee.last_name }}</option>
                 {% endfor %}
-          </select> {% endcomment %}
+          </select>
       </fieldset>
+
 <input type="submit" value="Add It" />
     </form>
   </body>
