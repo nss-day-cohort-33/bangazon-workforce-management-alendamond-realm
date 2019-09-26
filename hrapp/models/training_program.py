@@ -12,7 +12,6 @@ class TrainingProgram(models.Model):
     class Meta:
         verbose_name = ("Training Program")
         verbose_name_plural = ("Training Program")
-
     def __str__(self):
         return f"{self.title} {self.description}"
 

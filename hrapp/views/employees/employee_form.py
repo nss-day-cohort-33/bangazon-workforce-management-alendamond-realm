@@ -39,12 +39,10 @@ def employee_edit_form(request, employee_id):
 
     if request.method == 'GET':
         employee = get_employee(employee_id)
-        department = get_departments()
 
         template = 'employees/employee_form.html'
         context = {
             'employee': employee,
-            'all_departments': department
         }
 
         return render(request, template, context)
