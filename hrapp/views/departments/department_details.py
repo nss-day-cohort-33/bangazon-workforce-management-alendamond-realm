@@ -62,16 +62,3 @@ def get_department_and_employees(request, department_id):
         return render(request, template, context)
 
 
-
-# @login_required
-# def department_details(request, department_id):
-#     if request.method == 'GET':
-#         department_details = get_department_and_employees(request, department_id)
-
-#         template = 'departments/department_details.html'
-#         context = {
-#             "department_details": department_details
-#             }
-
-#         return render(request, template, context)
-

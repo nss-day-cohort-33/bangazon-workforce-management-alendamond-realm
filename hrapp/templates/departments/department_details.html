@@ -10,18 +10,25 @@
 
         <div>Budget:  {{ department.budget }}</div>
     </section>
+    <ul>
 
     {% for employee in all_employees %}
 
     {% if employee.department_id is department.id %}
+    {% if employee.is_supervisor is 1 %}
 
-    <ul>
-      <li>{{employee.first_name}}</li>
-    </ul>
+      <li><b>{{employee.first_name}}</b></li>
 
+    {% else %}
+
+        <li>{{employee.first_name}}</li>
+
+
+    {% endif %}
     {% endif %}
 
     {% endfor %}
 
+    </ul>
 
 {% endblock %}
