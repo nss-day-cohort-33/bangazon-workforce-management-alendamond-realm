@@ -2,14 +2,16 @@
 
 {% block content %}
 <h1>Employees</h1>
- {% comment %} <a href="{% url 'hrapp:emplpoyee_form' %}">Add Employee</a> {% endcomment %}
 
-<ol>
+
+<a href="{% url 'hrapp:employee_form' %}">Create New Employee</a>
+
+<ul>
 {% for employee in employees %}
+ <a href="{% url 'hrapp:employee' employee.id %}">{{ employee }}</a>
     <li>
-        <p>{{ employee }}</p>
-        Department: {{employee.department_id}}
+        Department: {{employee.dept_name}}
     </li>
 {% endfor %}
-</ol>
+</ul>
 {% endblock content %}

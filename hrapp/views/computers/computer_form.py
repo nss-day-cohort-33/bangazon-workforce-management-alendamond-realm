@@ -12,14 +12,14 @@ def get_computers():
         db_cursor.execute("""
         SELECT
         c.id,
-        c.make,
+        c.manufacturer,
+        c.model,
         c.purchase_date,
         c.decommission_date
         FROM hrapp_computer c;
         """)
 
         return db_cursor.fetchall()
-
 
 def computer_form(request):
     if request.method == 'GET':
