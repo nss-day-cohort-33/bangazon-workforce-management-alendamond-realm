@@ -1,24 +1,27 @@
 {% extends 'shared/base.html' %}
 
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>Department</title>
-</head>
 
 {% block content %}
-<body>
+    <title>Department</title>
 
     <section id="department_details">
-        <h1>{{ department.dept_name }}</h1>
+        <h1>Department:  {{ department.dept_name }}</h1>
 
-        <div>Budget: {{ department.budget }}</div>
+        <div>Budget:  {{ department.budget }}</div>
     </section>
 
-</body>
-{% endblock %}
+    {% for employee in all_employees %}
 
-</html>
+    {% if employee.department_id is department.id %}
+
+    <ul>
+      <li>{{employee.first_name}}</li>
+    </ul>
+
+    {% endif %}
+
+    {% endfor %}
+
+
+{% endblock %}
