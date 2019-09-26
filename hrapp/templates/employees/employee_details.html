@@ -18,13 +18,12 @@
         <li>Computer Id: {{employee.computer_id}} </li>
         <li>Manufacturer: {{employee.manufacturer}} </li>
         <li>Model: {{employee.model}} </li>
-        <h1>Future: {{employee.training_start_date}}</h1>
-
+         <h1>Future: {{employee.training_program.training_start_date}}</h1>
     </section>
-            {% comment %} <form action="{% url 'hrapp:employee_edit_form' employee.id %}" method="GET">
+            <form action="{% url 'hrapp:employee_edit_form' employee.id %}" method="GET">
             {% csrf_token %}
             <button>Edit</button>
-        </form> {% endcomment %}
+        </form>
     {% endblock %}
 </body>
 

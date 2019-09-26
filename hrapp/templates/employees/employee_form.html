@@ -5,7 +5,7 @@
 
 
     {% if employee.id is not None %}
-        <form action="{% url 'hrapp:employe_list' employee.id %}" method="post">
+        <form action="{% url 'hrapp:employee_list' employee.id %}" method="post">
     {% else %}
         <form action="{% url 'hrapp:employee_list' %}" method="post">
     {% endif %}

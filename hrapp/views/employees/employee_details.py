@@ -41,6 +41,8 @@ def get_employee(employee_id):
 
         return db_cursor.fetchone()
 
+
+
 @login_required
 def employee_details(request, employee_id):
     if request.method == 'GET':
@@ -52,3 +54,33 @@ def employee_details(request, employee_id):
         }
 
         return render(request, template, context)
+
+    elif request.method == 'POST':
+        form_data = request.POST
+
+        # Check if this POST is for editing a book
+        if (
+            "actual_method" in form_data
+            and form_data["actual_method"] == "PUT"
+        ):
+            with sqlite3.connect(Connection.db_path) as conn:
+                db_cursor = conn.cursor()
+
+                db_cursor.execute("""
+                UPDATE hrapp_employee
+                SET last_name = ?,
+                    computer_id = ?,
+                    manufacturer = ?,
+                    model = ?,
+                    training_start_date = ?
+                WHERE id = ?
+                """,
+                (
+                    form_data['last_name'], form_data['computer_id'],
+                    form_data['model'], form_data['manufacturer'],
+                    form_data["manufacturer"], employee_id,
+                ))
+
+            return redirect(reverse('hrapp:employees'))
+
+
