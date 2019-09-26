@@ -7,12 +7,11 @@
 {% for computer in all_computers %}
 
     <li>
-        Computer Model: {{computer.manufacturer}} {{computer.model}}
+
+       Computer Model: {{computer.manufacturer}} {{computer.model}}
         <br>
-        Purchase date: {{computer.purchase_date}}
-        <br>
-        Decommission date: {{computer.decommission_date}}
-        {% comment %} <a href="{% url 'hrapp:computer_list' computer.id %}"> Detials </a> {% endcomment %}
+       <a href="{% url 'hrapp:computer' computer.id %}">Details</a>
+
     </li>
 {% endfor %}
 </ul>

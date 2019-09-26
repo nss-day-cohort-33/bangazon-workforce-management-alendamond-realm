@@ -12,4 +12,6 @@ from .departments.department_details import get_department_and_employees
 from .departments.department_form import department_form
 from .computers import computer_list
 from .computers import computer_form
+from .computers.computer_details import computer_details
+from .computers.computer_details import get_computer
 

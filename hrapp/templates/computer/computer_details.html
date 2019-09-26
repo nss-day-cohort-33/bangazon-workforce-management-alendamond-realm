@@ -1,0 +1,20 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+  <section id="computer-details">
+        <h1>{{ computer.manufacturer }} {{ computer.model }}</h1>
+
+        <div>date purchased {{ computer.purchase_date }}</div>
+        {% if computer.decommission_date %}
+            <div>decommissoned date: {{ computer.decommission_date }}</div>
+        {% endif %}
+        {% for employee in employees %}
+        {% if employee.computer_id == computer.id %}
+        <div> current assigned employee: {{ employee.first_name }} {{ employee.last_name }}
+        {% endif %}
+        {% endfor %}
+    </section>
+
+
+{% endblock %}
