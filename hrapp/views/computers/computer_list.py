@@ -16,7 +16,8 @@ def computer_list (request):
         db_cursor.execute("""
         SELECT
         c.id,
-        c.make,
+        c.manufacturer,
+        c.model,
         c.purchase_date,
         c.decommission_date
         FROM hrapp_computer c;
@@ -38,7 +39,7 @@ def computer_list (request):
             db_cursor.execute("""
             INSERT INTO hrapp_computer
             (
-                make, purchase_date, decommission_date
+                manufacturer, model, purchase_date, decommission_date
             )
             VALUES (?, ?, ?)
             """,
