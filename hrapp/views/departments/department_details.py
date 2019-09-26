@@ -22,8 +22,9 @@ def create_department(cursor, row):
     employee.id = _row["employee_id"]
     employee.first_name = _row["first_name"]
     employee.Last_name = _row["last_name"]
+    employee.department_id = _row["department_id"]
 
-    department.employees = employee
+    department.employees = []
     # Return a tuple containing the department and the
     # employee built from the data in the current row of
     # the data set
@@ -31,7 +32,7 @@ def create_department(cursor, row):
 
 
 
-def get_department(department_id):
+def get_department_and_employees(request, department_id):
     with sqlite3.connect(Connection.db_path) as conn:
         conn.row_factory = create_department
 
@@ -51,14 +52,40 @@ def get_department(department_id):
         WHERE d.id = ?
         """, (department_id,))
 
-        return db_cursor.fetchone()
+        all_departments = db_cursor.fetchall()
+
+        #Start with empty dictionary
+        department_groups = {}
+
+        # Iterate the list of tuples
+        for(department, employee) in all_departments:
+
+            # If the dictionary does have a key of the current
+            # department 'id' value, add the key and set the
+            # value to the current library
+            if department.id not in department_groups:
+                department_groups[department.id] = department
+                department_groups[department.id].employees.append(employee)
+
+            # If the key does exist, just append the current employee
+            # to the list of employees for the current department
+
+            else:
+                department_groups[department.id].employees.append(employee)
+
+        template = 'departments/department_list.html'
+        context = {
+            'all_departments': department_groups.values()
+        }
+
+        return render(request, template, context)
 
 
 
 @login_required
 def department_details(request, department_id):
     if request.method == 'GET':
-        department_details = get_department(department_id)
+        department_details = get_department_and_employees(request, department_id)
 
         template = 'departments/department_details.html'
         context = {
