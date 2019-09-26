@@ -1,35 +1,45 @@
 {% extends 'shared/base.html' %}
 {% block content %}
-<body>
-    <h1>Employee</h1>
+
+<h1>Employees</h1>
+
+
     {% if employee.id is not None %}
         <form action="{% url 'hrapp:employee_list' employee.id %}" method="post">
+    {% else %}
+        <form action="{% url 'hrapp:employee_list' %}" method="post">
+    {% endif %}
         {% csrf_token %}
-        <fieldset>
-            <label for="first_name">First Name: </label>
-            <input id="first_name" type="text" name="first_name" value="{{ employee.first_name }}">
+
+<form action="{% url 'hrapp:employee_list' %}" method="post">
+  <fieldset>
+      <label for="first_name">First Name: </label>
+      <input id="first_name" type="text" name="first_name">
+  </fieldset>
+  <fieldset>
+      <label for="last_name">Last Name: </label>
+      <input id="last_name" type="text" name="last_name">
+  </fieldset>
+    <fieldset>
+      <label for="start_date">Start Date: </label>
+      <input id="start_date" type="text" name="start_date">
+  </fieldset>
+    <fieldset>
+      <label for="is_supervisor">Supervisor: </label>
+      <select id="is_supervisor" type="text" name="is_supervisor">
+              <option type = "hidden" value = "0"{% if employee.is_supervisor == 0 %}selected{% endif %}>True</option>
+              <option type = "hidden" value = "1" {% if employee.is_supervisor == 1 %}selected{% endif %}>False</option>
+      </select>
         </fieldset>
-        <fieldset>
-            <label for="last_name">Last Name: </label>
-            <input id="last_name" type="text" name="last_name" value="{{ employee.last_name }}">
-        </fieldset>
-        <fieldset>
-            <label for="start_date">Start Date: </label>
-            <input id="start_date" type="number" name="start_date" value="{{ employee.start_date }}">
-        </fieldset>
-        <fieldset>
-            <label for="is_supervisor">Is supervisor </label>
-            <option id="is_supervisor" type="text" name="is_supervisor" value="{{ emplpoyee.is_supervisor }}">
-        </fieldset>
-        {% comment %} <fieldset>
-            <label for="location">Library: </label>
-            <select id="location" type="text" name="location">
-                {% for library in all_libraries %}
-                <option {% if department.id == dep.location_id %}selected{% endif %} value="{{ library.id }}">
-                    {{ library.title }}</option>
+  <fieldset>
+            <label for="department">Department: </label>
+            <select id="department" type="text" name="department_id">
+                {% for department in all_departments %}
+                <option {% if department.id == employee.department_id %}selected{% endif %} value="{{ department.id }}">
+                    {{ department.dept_name }}</option>
                 {% endfor %}
             </select>
-        </fieldset> {% endcomment %}
+        </fieldset>
 
         {% if employee.id is not None %}
             <input type="hidden" name="actual_method" value="PUT">
@@ -39,6 +49,9 @@
         {% endif %}
 
     </form>
+
+  {% endblock %}
+
 </body>
-{% endblock %}
+
 </html>

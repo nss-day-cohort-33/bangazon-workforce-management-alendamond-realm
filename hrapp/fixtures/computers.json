@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "manufacturer": "Lenovo",
-      "model":"NoGo 2000",
+      "model": "NoGo 2000",
       "purchase_date": "2012-03-09",
       "decommission_date": "2014-04-05"
     }
