@@ -13,6 +13,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('logout/', logout_user, name='logout'),
+    # url('^employees/(<book_id>/form$', employee_edit_form, name='employee_edit_form'),
     path('employees/', employee_list, name='employee_list'),
     path('training_programs/', training_list, name='training_list'),
     path('employees/form', employee_form, name='employee_form'),

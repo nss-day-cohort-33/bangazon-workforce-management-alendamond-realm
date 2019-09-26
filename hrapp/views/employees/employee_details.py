@@ -28,7 +28,7 @@ def get_employee(employee_id):
                 etp.employee_id,
                 tp.id training_program_id,
                 tp.title,
-                tp.start_date,
+                tp.start_date training_start_date,
                 tp.end_date
             from hrapp_employee e
             left join hrapp_department d on e.department_id = d.id
