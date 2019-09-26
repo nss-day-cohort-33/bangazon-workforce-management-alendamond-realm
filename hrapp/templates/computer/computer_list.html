@@ -1,7 +1,7 @@
 {% extends 'shared/base.html' %}
 
 {% block content %}
-<h1>Computer</h1>
+<h1>Computers</h1>
 <a href="{% url 'hrapp:computer_form' %}">Add Computer</a>
 <ul>
 {% for computer in all_computers %}
