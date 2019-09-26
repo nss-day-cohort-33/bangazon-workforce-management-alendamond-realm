@@ -24,6 +24,13 @@
       <label for="start_date">Start Date: </label>
       <input id="start_date" type="text" name="start_date">
   </fieldset>
+    <fieldset>
+      <label for="is_supervisor">Supervisor: </label>
+      <select id="is_supervisor" type="text" name="is_supervisor">
+              <option type = "hidden" value = "0"{% if employee.is_supervisor == 0 %}selected{% endif %}>True</option>
+              <option type = "hidden" value = "1" {% if employee.is_supervisor == 1 %}selected{% endif %}>False</option>
+      </select>
+        </fieldset>
   <fieldset>
             <label for="department">Department: </label>
             <select id="department" type="text" name="department_id">
