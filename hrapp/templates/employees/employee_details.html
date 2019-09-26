@@ -1,39 +1,29 @@
 {% extends 'shared/base.html' %}
-
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Employees</title>
+    <title>Details</title>
 </head>
 
-{% block content %}
 <body>
+    {% block content %}
     <section id="employee-details">
-        <h2>{{ employee.first_name }}</h2>
-        <h2> {{ employee.last_name }}</h2>
+        <h1> Name:  {{ employee.first_name }} {{ employee.last_name}}</h1>
+        <h2> Start Date: {{ employee.start_date}}<h2>
+        <h2>Department: {{ employee.department.dept_name }}</h2>
+        <h2>Assigned Computer:
+        <li>Computer Id: {{employee.computer_id}} </li>
+        <li>Manufacturer: {{employee.manufacturer}} </li>
+        <li>Model: {{employee.model}} </li>
+        </h2>
+        <h2> Previous Training:
 
-        {% comment %} <div>Start Date{{ employee.year_published }}</div> {% endcomment %}
-        {% comment %} <div>is: {{ employee.is_supervisor }}</div> {% endcomment %}
-        {% comment %} <div>Located in the {{ employee.location.title }}</div>
-        <div>Registered by {{ employee.librarian.first_name }} {{ employee.librarian.last_name }}</div> {% endcomment %}
+
     </section>
-
-    <section id="employee-actions" style="display:flex;">
-        <form action="{% url 'hrapp:employee' employee.id %}" method="POST">
-            {% csrf_token %}
-            <input type="hidden" name="actual_method" value="DELETE">
-            <button>Delete</button>
-        </form>
-
-        <form action="{% url 'libraryapp:employee_edit_form' employee.id %}" method="GET">
-            {% csrf_token %}
-            <button>Edit</button>
-        </form>
-    </section>
+    {% endblock %}
 </body>
-{% endblock %}
 
 </html>

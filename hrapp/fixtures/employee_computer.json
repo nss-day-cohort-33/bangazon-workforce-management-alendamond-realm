@@ -3,8 +3,8 @@
       "model": "hrapp.employeecomputer",
       "pk": 1,
       "fields": {
-        "employeeId": 1,
-        "computerId":1,
+        "employee": 1,
+        "computer":1,
         "assigned_date": "2012-03-09",
         "unassigned_date": "2014-04-05"
       }
@@ -13,8 +13,8 @@
         "model": "hrapp.employeecomputer",
         "pk": 2,
         "fields": {
-          "employeeId": 2,
-          "computerId":2,
+          "employee": 2,
+          "computer":2,
           "assigned_date": "2012-06-10",
           "unassigned_date": "2014-09-05"
         }
@@ -23,8 +23,8 @@
         "model": "hrapp.employeecomputer",
         "pk": 3,
         "fields": {
-          "employeeId": 3,
-          "computerId":3,
+          "employee": 3,
+          "computer":3,
           "assigned_date": "2010-03-09",
           "unassigned_date": "2019-04-05"
         }
@@ -33,8 +33,8 @@
         "model": "hrapp.employeecomputer",
         "pk": 4,
         "fields": {
-          "employeeId": 4,
-          "computerId":4,
+          "employee": 4,
+          "computer":4,
           "assigned_date": "2020-03-09",
           "unassigned_date": "2024-04-05"
         }

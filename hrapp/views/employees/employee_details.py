@@ -14,14 +14,28 @@ def get_employee(employee_id):
 
         db_cursor.execute("""
         SELECT
-            select
                 e.id,
                 e.first_name,
                 e.last_name,
                 e.start_date,
-                e.is_supervisor
+                e.is_supervisor,
+                d.dept_name,
+                d.budget,
+                d.id department_id,
+                c.id computer_id,
+                c.manufacturer,
+                c.model,
+                etp.employee_id,
+                tp.id training_program_id,
+                tp.title,
+                tp.start_date,
+                tp.end_date
             from hrapp_employee e
-            join auth_user u on e.user_id = u.id
+            left join hrapp_department d on e.department_id = d.id
+            left join hrapp_employeecomputer ec on e.id = ec.employee_id
+            left join hrapp_computer c on c.id = ec.computer_id
+            left join hrapp_employeetrainingprogram etp on e.id = etp.employee_id
+            left join hrapp_trainingprogram tp on tp.id = etp.training_program_id
             where e.id = ?
         """, (employee_id,))
 
@@ -32,7 +46,7 @@ def employee_details(request, employee_id):
     if request.method == 'GET':
         employee = get_employee(employee_id)
 
-        template = 'employees/details.html'
+        template = 'employees/employee_details.html'
         context = {
             'employee': employee
         }
