@@ -17,11 +17,11 @@
     {% if employee.department_id is department.id %}
     {% if employee.is_supervisor is 1 %}
 
-      <li><b>{{employee.first_name}}</b></li>
+      <li><b>{{employee.first_name}}</b> is a supervisor!</li>
 
     {% else %}
 
-        <li>{{employee.first_name}}</li>
+        <li><b>{{employee.first_name}}</b> is NOT a supervisor!</li>
 
 
     {% endif %}
