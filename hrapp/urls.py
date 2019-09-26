@@ -24,7 +24,6 @@ urlpatterns = [
     path('^department/form$', department_form, name='department_form'),
     path('computers/', computer_list, name='computer_list'),
     path('computer/form', computer_form, name='computer_form')
-    # path('^employee/form$', employee_form, name='employee_form')
 ]
 
 

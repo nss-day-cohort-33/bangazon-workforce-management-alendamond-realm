@@ -68,19 +68,19 @@ def employee_details(request, employee_id):
 
                 db_cursor.execute("""
                 UPDATE hrapp_employee
-                SET last_name = ?,
-                    computer_id = ?,
-                    manufacturer = ?,
-                    model = ?,
-                    training_start_date = ?
+                SET first_name = ?,
+                    last_name = ?,
+                    start_date = ?,
+                    is_supervisor = ?,
+                    department_id = ?
                 WHERE id = ?
                 """,
                 (
-                    form_data['last_name'], form_data['computer_id'],
-                    form_data['model'], form_data['manufacturer'],
-                    form_data["manufacturer"], employee_id,
+                    form_data['first_name'], form_data['last_name'],
+                    form_data['start_date'], form_data['is_supervisor'],
+                    form_data["department_id"], employee_id
                 ))
 
-            return redirect(reverse('hrapp:employees'))
+            return redirect(reverse('hrapp:employee_list'))
 
 
