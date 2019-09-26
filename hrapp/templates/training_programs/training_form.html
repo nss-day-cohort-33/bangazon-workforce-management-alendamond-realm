@@ -2,37 +2,46 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Bangazon-Workforce</title>
+    <title>Bangazon</title>
   </head>
   <body>
     {% extends 'shared/base.html' %}
     {% block content %}
+      {% if training.id is not None %}
+        <h1>Edit a Training Program</h1>
+        <form action="{% url 'hrapp:training_details' training.id %}" method="post">
+      {% else %}
         <h1>Add a Training Program</h1>
-
         <form action="{% url 'hrapp:training_list' %}" method="post">
+      {% endif %}
         {% csrf_token %}
         <fieldset>
-            <label for="name">Name: </label>
-            <input id="name" type="text" name="name">
+            <label for="title">Title: </label>
+            <input id="title" type="text" name="title" value="{{ training.title }}">
         </fieldset>
         <fieldset>
             <label for="description">Description: </label>
-            <input id="description" type="text" name="description">
+            <input id="description" type="type" name="description" value="{{ training.description }}">
         </fieldset>
         <fieldset>
             <label for="start_date">Start Date: </label>
-            <input id="start_date" type="date" name="start_date">
+            <input id="start_date" type="date" name="start_date" value="{{ training.start_date }}">
         </fieldset>
         <fieldset>
             <label for="end_date">End Date: </label>
-            <input id="end_date" type="date" name="end_date">
+            <input id="end_date" type="date" name="end_date" value="{{ training.end_date }}">
         </fieldset>
         <fieldset>
-            <label for="max_num">Maxixum Number of Attendees: </label>
-            <input id="max_num" type="number" name="max_num">
+            <label for="capacity">Maximum Number of Attendees: </label>
+            <input id="capacity" type="number" name="capacity" value="{{ training.capacity }}">
         </fieldset>
+        {% if training.id is not None %}
+          <input type="hidden" name="actual_method" value="PUT">
+          <input type="submit" value="Update" />
+        {% else %}
         <input type="submit" value="Add It" />
-        </form>
+        {% endif %}
+      </form>
     {% endblock %}
   </body>
 </html>

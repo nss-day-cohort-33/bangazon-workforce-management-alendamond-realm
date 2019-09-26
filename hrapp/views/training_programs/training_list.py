@@ -18,14 +18,14 @@ def training_list(request):
 
             db_cursor = conn.cursor()
             db_cursor.execute("""
-            select
-                t.id,
-                t.name,
-                t.description,
-                t.start_date,
-                t.end_date,
-                t.max_num
-            from hrapp_trainingprogram t
+            SELECT
+                tp.id,
+                tp.title,
+                tp.description,
+                tp.start_date,
+                tp.end_date,
+                tp.capacity
+            from hrapp_trainingprogram tp
             """)
 
             all_trainings = db_cursor.fetchall()
@@ -46,13 +46,13 @@ def training_list(request):
             db_cursor.execute("""
             INSERT INTO hrapp_trainingprogram
             (
-                name, description, start_date,
-                end_date, max_num
+                title, description, start_date,
+                end_date, capacity
             )
             VALUES (?, ?, ?, ?, ?)
             """,
-                              (form_data['name'], form_data['description'],
-                               form_data['start_date'], form_data['end_date'],
-                                  form_data["max_num"]))
+                (form_data['title'], form_data['description'],
+                    form_data['start_date'], form_data['end_date'],
+                    form_data['capacity']))
 
         return redirect(reverse('hrapp:training_list'))
