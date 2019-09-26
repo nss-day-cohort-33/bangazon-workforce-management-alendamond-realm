@@ -25,13 +25,10 @@
       <ol class="trainings">
       {% for training in all_trainings %}
           <li class="training">
-            {% comment %} <a class="training__name" href="{% url 'hrapp:training_list' training.id %}"> {% endcomment %}
-              {{ training.name }}
-            {% comment %} </a> {% endcomment %}
-            {% comment %} <div class="training__description">
-              {{training.author}} published in {{training.year_published}}
-            </div> {% endcomment %}
-            <button id="detail--{{ training.id }}">Details</button>
+              {{ training.title }}
+            <a class="training__title" href="{% url 'hrapp:training_details' training.id %}">
+              <button id="detail--{{ training.id }}">Details</button>
+            </a>
           </li>
       {% endfor %}
       </ol>

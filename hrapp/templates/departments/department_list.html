@@ -18,11 +18,7 @@
     <ol class="departments">
     {% for department in all_departments %}
         <li class="department">
-            <a class="department__title" href="{% url 'hrapp:department_details' department.id %}">Details </a>for {{ department.dept_name }}
-            <ol class="department_emps">
-                <li>There are currently x employees in this department</li>
-            </ol>
-
+            <a class="department__title" href="{% url 'hrapp:department_details' department.id %}">Details </a>for {{ department.dept_name }} ({{ department.employees|length }})
         </li>
     {% endfor %}
     </ol>

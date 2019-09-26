@@ -7,33 +7,31 @@ from hrapp.models import model_factory
 from ..connection import Connection
 
 
-def create_department(cursor, row):
-    _row = sqlite3.Row(cursor, row)
 
-    department = Department()
-    department.id = _row["id"]
-    department.dept_name = _row["dept_name"]
-    department.budget = _row["budget"]
 
-    # Note: You are adding a blank books list to the department object
-    # This list will be populated later (see below)
-    department.employees = []
+def employee_list():
+    with sqlite3.connect(Connection.db_path) as conn:
+        conn.row_factory = model_factory(Employee)
+        db_cursor = conn.cursor()
 
-    employee = Employee()
-    employee.id = _row["employee_id"]
-    employee.first_name = _row["first_name"]
-    employee.Last_name = _row["last_name"]
+        # TODO: Add to query: e.department,
+        db_cursor.execute("""
+        select
+            e.id,
+            e.first_name,
+            e.last_name,
+            e.start_date,
+            e.is_supervisor,
+            e.department_id
+        from hrapp_employee e
+        """)
 
-    # Return a tuple containing the department and the
-    # employee built from the data in the current row of
-    # the data set
-    return (department, employee,)
-
+        return db_cursor.fetchall()
 
 
 def get_department(department_id):
     with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = create_department
+        conn.row_factory = model_factory(Department)
 
         db_cursor = conn.cursor()
 
@@ -42,26 +40,25 @@ def get_department(department_id):
             d.id,
             d.dept_name,
             d.budget
-            e.first_name
-            e.last_name
         FROM hrapp_department d
-        join hrapp_employee e on d.id = e.department_id
         WHERE d.id = ?
         """, (department_id,))
 
         return db_cursor.fetchone()
 
 
-
-@login_required
-def department_details(request, department_id):
+def get_department_and_employees(request, department_id):
     if request.method == 'GET':
-        department_details = get_department(department_id)
+        employees = employee_list()
+        department = get_department(department_id)
+
 
         template = 'departments/department_details.html'
         context = {
-            "department_details": department_details
-            }
+            'department': department,
+            'all_employees': employees
+        }
 
         return render(request, template, context)
+
 
